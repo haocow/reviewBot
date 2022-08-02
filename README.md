@@ -11,3 +11,15 @@ Alternatively, you can deploy it using this Heroku Button:
 For more information about using Python on Heroku, see these Dev Center articles:
 
 - [Python on Heroku](https://devcenter.heroku.com/categories/python)
+
+# Deploying
+```
+git push heroku main
+heroku ps:scale web=1
+heroku open
+```
+
+# Local dev
+```
+heroku local
+```
