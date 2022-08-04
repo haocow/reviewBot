@@ -23,3 +23,13 @@ heroku open
 ```
 heroku local
 ```
+
+# Actions
+## Simulate completing a transaction
+```
+curl --location --request POST 'https://mighty-stream-68566.herokuapp.com/transactions/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "userId": "5398095040303673"
+}'
+```
