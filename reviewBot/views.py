@@ -23,11 +23,11 @@ def webhook(request):
         logging.warn("Challenge failed in request.")
         return HttpResponseForbidden()
     else:
-        try:
-            verifySignature(request)
-        except Exception as e:
-            logging.warn(str(e))
-            return HttpResponseForbidden()
+        # try:
+        #     verifySignature(request)
+        # except Exception as e:
+        #     logging.warn(str(e))
+        #     return HttpResponseForbidden()
         reqBodyStr = request.body
         reqBodyObj = json.loads(reqBodyStr)
 
