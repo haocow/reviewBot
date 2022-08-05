@@ -19,6 +19,12 @@ heroku ps:scale web=1
 heroku open
 ```
 
+## View logs
+# View prod logs
+```
+heroku logs --tail -a mighty-stream-68566
+```
+
 # Local dev
 ```
 heroku local
