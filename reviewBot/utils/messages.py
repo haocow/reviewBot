@@ -2,6 +2,7 @@ import logging
 import os
 import requests
 
+from reviewBot.utils.constants import YOURE_WELCOME_MESSAGE_TEXT
 from reviewBot.utils.print import haoPrint
 from reviewBot.utils.facebook import (GRAPH_BASE_URL, getPageAccessTokenQueryParams)
 
@@ -34,3 +35,14 @@ def sendMessageToUser(recipientId, message):
 
 def containsThanks(text: str):
     return "thank" in text.lower()
+
+def isReviewRequestReply(messaging):
+    message = messaging["message"]
+    if "reply_to" not in message:
+        return False
+    return isReviewRequest(message["reply_to"]["mid"])
+    
+def isReviewRequest(messageId):
+    # TODO: confirm that this is a valid review request
+    # for now, just always return True if there's a reply_to id
+    return True
