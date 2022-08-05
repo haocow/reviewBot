@@ -4,7 +4,6 @@ from django.contrib import admin
 
 admin.autodiscover()
 
-import hello.views
 import reviewBot.views.webhook
 import reviewBot.views.transactions
 
@@ -17,11 +16,6 @@ import reviewBot.views.transactions
 # Learn more here: https://docs.djangoproject.com/en/2.1/topics/http/urls/
 
 urlpatterns = [
-    path("", hello.views.index, name="index"),
-    path("hello/", hello.views.hello, name="hello"),
-    path("db/", hello.views.db, name="db"),
-    path("admin/", admin.site.urls),
-
     path("webhook/", reviewBot.views.webhook.webhook, name="webhook"),
     path("transactions/", reviewBot.views.transactions.transactions, name="transactions")
 ]
